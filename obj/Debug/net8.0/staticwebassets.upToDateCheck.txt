@@ -1,8 +1,9 @@
-wwwroot\css\home.css
+wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\IJAP.jpg
 wwwroot\images\IJCCM.jpg
 wwwroot\images\IJCNP.jpg
+wwwroot\images\IJHMP.jpg
 wwwroot\images\IJPR.jpg
 wwwroot\images\IRJOG.jpg
 wwwroot\images\logopublication-01.png
@@ -65,4 +66,4 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\site.css
+wwwroot\css\home.css

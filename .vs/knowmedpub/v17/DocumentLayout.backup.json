@@ -1,34 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\live_other_project\\kamal\\knowmedpub\\",
+  "WorkspaceRootPath": "D:\\live_other_project\\kamal\\git_knowmedpub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\knowmedpub\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\git_knowmedpub\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\knowmedpub\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\git_knowmedpub\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\knowmedpub\\views\\home\\journal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:views\\home\\journal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\knowmedpub\\views\\home\\subscription.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:views\\home\\subscription.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\knowmedpub\\views\\home\\publicationethics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:views\\home\\publicationethics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\knowmedpub\\views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\knowmedpub\\views\\home\\authorguidelines.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\git_knowmedpub\\views\\home\\authorguidelines.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:views\\home\\authorguidelines.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|d:\\live_other_project\\kamal\\git_knowmedpub\\views\\home\\publicationethics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{74264BA9-2A0A-45CC-8128-6A562D89A8BF}|knowmedpub.csproj|solutionrelative:views\\home\\publicationethics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,92 +35,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\live_other_project\\kamal\\knowmedpub\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "D:\\live_other_project\\kamal\\knowmedpub\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowBgAAAAMAAAAAAAAAA==",
+              "Title": "home.css",
+              "DocumentMoniker": "D:\\live_other_project\\kamal\\git_knowmedpub\\wwwroot\\css\\home.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\home.css",
+              "ToolTip": "D:\\live_other_project\\kamal\\git_knowmedpub\\wwwroot\\css\\home.css",
+              "RelativeToolTip": "wwwroot\\css\\home.css",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAADwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-20T17:26:30.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PublicationEthics.cshtml",
-              "DocumentMoniker": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\PublicationEthics.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\PublicationEthics.cshtml",
-              "ToolTip": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\PublicationEthics.cshtml",
-              "RelativeToolTip": "Views\\Home\\PublicationEthics.cshtml",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAAAA8BAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-20T17:01:25.713Z",
+              "WhenOpened": "2025-07-27T19:03:58.339Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\live_other_project\\kamal\\git_knowmedpub\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\live_other_project\\kamal\\git_knowmedpub\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-20T17:00:08.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ContactUs.cshtml",
-              "DocumentMoniker": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\ContactUs.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\ContactUs.cshtml",
-              "ToolTip": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\ContactUs.cshtml",
-              "RelativeToolTip": "Views\\Home\\ContactUs.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-20T17:00:00.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Subscription.cshtml",
-              "DocumentMoniker": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\Subscription.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Subscription.cshtml",
-              "ToolTip": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\Subscription.cshtml",
-              "RelativeToolTip": "Views\\Home\\Subscription.cshtml",
-              "ViewState": "AgIAABkBAAAAAAAAAAAowN0BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-16T20:51:45.886Z",
+              "WhenOpened": "2025-07-27T19:03:50.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Journal.cshtml",
-              "DocumentMoniker": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\Journal.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Journal.cshtml",
-              "ToolTip": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\Journal.cshtml",
-              "RelativeToolTip": "Views\\Home\\Journal.cshtml",
-              "ViewState": "AgIAAHgCAAAAAAAAAAAAACUCAAA6AAAAAAAAAA==",
+              "Title": "AuthorGuidelines.cshtml",
+              "DocumentMoniker": "D:\\live_other_project\\kamal\\git_knowmedpub\\Views\\Home\\AuthorGuidelines.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\AuthorGuidelines.cshtml",
+              "ToolTip": "D:\\live_other_project\\kamal\\git_knowmedpub\\Views\\Home\\AuthorGuidelines.cshtml",
+              "RelativeToolTip": "Views\\Home\\AuthorGuidelines.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-10T19:24:32.783Z",
+              "WhenOpened": "2025-07-27T18:43:48.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthorGuidelines.cshtml",
-              "DocumentMoniker": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\AuthorGuidelines.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\AuthorGuidelines.cshtml",
-              "ToolTip": "D:\\live_other_project\\kamal\\knowmedpub\\Views\\Home\\AuthorGuidelines.cshtml",
-              "RelativeToolTip": "Views\\Home\\AuthorGuidelines.cshtml",
-              "ViewState": "AgIAAFoBAAAAAAAAAAAAAHkBAABoAgAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PublicationEthics.cshtml",
+              "DocumentMoniker": "D:\\live_other_project\\kamal\\git_knowmedpub\\Views\\Home\\PublicationEthics.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\PublicationEthics.cshtml",
+              "ToolTip": "D:\\live_other_project\\kamal\\git_knowmedpub\\Views\\Home\\PublicationEthics.cshtml",
+              "RelativeToolTip": "Views\\Home\\PublicationEthics.cshtml",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAAAGgBAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-10T19:21:57.896Z"
+              "WhenOpened": "2025-07-20T17:01:25.713Z",
+              "EditorCaption": ""
             }
           ]
         }
