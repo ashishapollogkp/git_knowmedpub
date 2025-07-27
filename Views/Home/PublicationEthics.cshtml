@@ -91,7 +91,7 @@
         color: #2563eb; /* text-blue-600 */
         font-weight: 500; /* font-medium */
         white-space: nowrap; /* whitespace-nowrap */
-        text-decoration:none;
+        text-decoration: none;
     }
 
         /* Styles for the active tab */
@@ -140,7 +140,7 @@
         /* Class to show the active tab content */
         .tab-content.active-content {
             opacity: 1;
-            max-height: 1000px; /* A sufficiently large value to accommodate content */
+            max-height: 100%; /* A sufficiently large value to accommodate content */
             padding-top: 1.5rem; /* Tailwind py-6, now applied on active */
             padding-bottom: 1.5rem; /* Tailwind py-6, now applied on active */
         }
@@ -165,10 +165,22 @@
 
         .numbered-bullets li::before {
             counter-increment: item;
-            content:  counter(item) ". ";
+            content: counter(item) ". ";
             font-weight: bold;
-            color: #007BFF; /* optional: blue bullet and number */
+            color: #333; /* optional: blue bullet and number */
             margin-right: 8px;
+        }
+
+    .custom-o-list {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+        .custom-o-list li::before {
+            content: "o ";
+            font-weight: bold;
+            color: #333; /* You can change color as needed */
+            margin-right: 6px;
         }
 
 </style>
@@ -267,15 +279,90 @@
 
                         <h3>Editorial Policy</h3>
                         <p>
-                            Soon.
+                           Peer Review Policy
                         </p>
                     </div> *@
 
                     <div id="action2" class="tab-content">
-                        <h3>Peer-review Process</h3>
+                        <h3>Peer Review Policy</h3>
                         <p>
-                            Soon.
+                            At the Knowmed Publication platform, we are committed to upholding the highest standards of academic excellence and research integrity. To ensure the quality, originality, and scientific value of all published content, Knowmed Publication follows a<b> double-blind peer review</b> process.
                         </p>
+
+                        <section>
+                            <!-- Added section tag -->
+                            <h3>1. Review Process</h3>
+                            <ul class="custom-o-list">
+                                <li>All manuscripts submitted to all journals in Knowmed Publication undergo an initial editorial screening to assess their suitability, originality, and alignment with the journal's scope.</li>
+                                <li>Manuscripts that meet these criteria are sent to at least two independent expert reviewers.</li>
+                                <li>The identity of both the authors and reviewers is kept anonymous throughout the review process to promote fairness and objectivity.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <!-- Added section tag -->
+                            <h3>2. Reviewer Selection</h3>
+                            <ul class="custom-o-list">
+                                <li>Reviewers are selected based on their academic qualifications, expertise in the relevant subject area, and prior review experience.</li>
+                                <li>Reviewers are expected to declare any conflicts of interest and maintain strict confidentiality of manuscript content.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <!-- Added section tag -->
+                            <h3>3. Review Criteria</h3>
+                            <p>Reviewers evaluate the manuscript based on:</p>
+                            <ul class="custom-o-list">
+                                <li>Originality and significance of the research</li>
+                                <li>Soundness of methodology and data analysis</li>
+                                <li>Clarity, coherence, and structure of the presentation</li>
+                                <li>Validity of conclusions and ethical compliance</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <!-- Added section tag -->
+                            <h3>4. Decision and Revision</h3>
+                            <p>Based on the reviewers’ recommendations, the editorial team makes one of the following decisions:</p>
+                            <ul class="custom-o-list">
+                                <li>Accept</li>
+                                <li>Minor revision</li>
+                                <li>Major revision</li>
+                                <li>Reject</li>
+                            </ul>
+                            <p>Authors are provided with constructive feedback and, if necessary, are invited to revise and resubmit the manuscript for further review.</p>
+                        </section>
+
+                        <section>
+                            <!-- Added section tag -->
+                            <h3>5. Timeframe</h3>
+                          
+
+                            <ul class="custom-o-list">
+                                <li>All journals strive to complete the peer review process within **4 to 6 weeks** from the date of submission.</li>
+                                
+                            </ul>
+
+                        </section>
+
+
+                        <section>
+                            <!-- Added section tag -->
+                            <h3>6. Ethical Standards</h3>
+                            <ul class="custom-o-list">
+                                <li>Knowmed Publication adheres to **COPE (Committee on Publication Ethics) guidelines** to ensure ethical handling of submissions.</li>
+                                <li>Plagiarism, falsification of data, and unethical research practices will result in immediate rejection.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <!-- Added section tag -->
+                            <h3>7. Appeals and Complaints</h3>
+                            <ul class="custom-o-list">
+                                <li>Authors may appeal editorial decisions with a detailed justification. Appeals will be independently reviewed by an editorial board member not involved in the original decision.</li>
+                            </ul>
+                        </section>
+                        
 
                     </div>
 
@@ -336,7 +423,9 @@
                                   Product advertorials will not feature treatment-specific or drug-specific campaigns linked to specific articles about the advertised products.<br />
                                 </li>
                           
-                            </ul><br />
+                            </ul>
+                            
+                            <br />
 
                             Advertisements or product information on the Knowmed Publication’s website do not imply endorsement or approval by the Journal or its publisher regarding the quality or claims of the advertised products. Editorial decisions are made independently and are not influenced by any advertisements on the website.<br />
 

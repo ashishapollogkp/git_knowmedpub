@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("knowmedpub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2262fd75fbf930cde3168a87a45bc96200ff3f17")]
 [assembly: System.Reflection.AssemblyProductAttribute("knowmedpub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("knowmedpub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
