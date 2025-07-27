@@ -1,0 +1,450 @@
+﻿@{
+    ViewData["Title"] = "PublicationEthics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Base styles for the body */
+
+
+    /* Main container for the single section */
+    .main-container {
+        display: flex;
+        flex-direction: column; /* flex-col */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+        border: 1px solid #e5e7eb; /* border border-gray-200 */
+        background-color: white; /* bg-white */
+        padding: 2rem; /* p-8 */
+        width: 100%; /* w-full */
+        max-width: 64rem; /* max-w-5xl (1024px) */
+        height: 100%; /* h-full */
+    }
+
+
+
+    /* About the Journal section */
+    .journal-section {
+        width: 100%; /* w-full */
+        height: 100%; /* h-full */
+        display: flex;
+        flex-direction: column; /* flex-col */
+    }
+
+    /* Title styling */
+    .journal-title {
+        font-size: 1.875rem; /* text-3xl */
+        font-weight: 800; /* font-extrabold */
+        color: #111827; /* text-gray-900 */
+        margin-bottom: 1.25rem; /* mb-5 */
+        padding-bottom: 0.75rem; /* pb-3 */
+        border-bottom: 2px solid #bfdbfe; /* border-b-2 border-blue-200 */
+    }
+
+    /* Card for Navigation Tabs */
+    .nav-card {
+        background-color: white; /* bg-white */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        padding: 1.5rem; /* p-6 */
+        margin-bottom: 2rem; /* mb-8 */
+        border: 1px solid #f3f4f6; /* border border-gray-100 */
+    }
+
+    /* Navigation Bar */
+    .nav-bar {
+        display: flex; /* flex */
+        justify-content: center; /* justify-center */
+    }
+
+
+
+    /* Navigation list */
+    .nav-list {
+        list-style: none; /* remove default list styling */
+        padding: 0;
+        margin: 0;
+        display: flex; /* flex */
+        flex-wrap: wrap; /* flex-wrap */
+        align-items: center; /* items-center */
+        font-size: 1rem; /* text-base */
+    }
+
+
+
+
+    /* Custom CSS for the separator */
+    .nav-item-separator:not(:last-child)::after {
+        content: '|';
+        margin-left: 0.75rem; /* Increased space for separator */
+        margin-right: 0; /* Adjusted to combine with li margin-right */
+        color: #94a3b8; /* Tailwind slate-400 for a softer separator */
+        font-weight: 300; /* Lighter weight for the separator */
+    }
+
+    .nav-link {
+        font-family: 'Inter', sans-serif;
+        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Smooth transition for color, background, and border */
+        padding: 0.5rem 0.75rem; /* More generous padding */
+        border-radius: 0.375rem; /* Tailwind rounded-md */
+        display: inline-block; /* Ensures padding and background work correctly */
+        color: #2563eb; /* text-blue-600 */
+        font-weight: 500; /* font-medium */
+        white-space: nowrap; /* whitespace-nowrap */
+        text-decoration:none;
+    }
+
+        /* Styles for the active tab */
+        .nav-link.active {
+            color: #1e40af; /* A darker blue for active state (Tailwind blue-800) */
+            font-weight: 600; /* Semi-bold for active state */
+            background-color: #eff6ff; /* Light blue background for active tab (Tailwind blue-50) */
+            border-bottom: 3px solid #1e40af; /* Thicker, bolder underline for active state */
+            padding-bottom: calc(0.5rem - 3px); /* Adjust padding to keep text aligned with new border */
+            border-radius: 0.375rem 0.375rem 0 0; /* Rounded top corners, sharp bottom for the border */
+        }
+
+        .nav-link:hover:not(.active) {
+            background-color: #f3f4f6; /* Light gray background on hover for non-active tabs (Tailwind gray-100) */
+            color: #2563eb; /* Tailwind blue-600 on hover */
+        }
+
+        .nav-link:hover {
+            color: #1d4ed8; /* hover:text-blue-800 */
+        }
+
+
+    /* Card for Tab Content Sections */
+    .content-card {
+        background-color: white; /* bg-white */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        padding: 1.5rem; /* p-6 */
+        border: 1px solid #f3f4f6; /* border border-gray-100 */
+        flex-grow: 1; /* flex-grow */
+    }
+
+    /* CSS for smooth content transitions */
+    .tab-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden; /* Hides content that exceeds max-height during transition */
+        transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        padding-top: 0; /* Initially no padding to make collapse smooth */
+        padding-bottom: 0;
+        line-height: 1.6; /* Improve readability */
+        color: #1f2937; /* text-gray-800 */
+        font-size: 1rem; /* text-base */
+    }
+
+        /* Class to show the active tab content */
+        .tab-content.active-content {
+            opacity: 1;
+            max-height: 1000px; /* A sufficiently large value to accommodate content */
+            padding-top: 1.5rem; /* Tailwind py-6, now applied on active */
+            padding-bottom: 1.5rem; /* Tailwind py-6, now applied on active */
+        }
+
+        /* Content specific styling */
+        .tab-content p {
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        .tab-content h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            color: #111827; /* text-gray-900 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+
+    .numbered-bullets {
+        list-style-type: none;
+        padding-left: 1.5rem;
+        counter-reset: item;
+    }
+
+        .numbered-bullets li::before {
+            counter-increment: item;
+            content:  counter(item) ". ";
+            font-weight: bold;
+            color: #007BFF; /* optional: blue bullet and number */
+            margin-right: 8px;
+        }
+
+</style>
+
+
+<main class="container">
+
+
+    <section class="content">
+
+
+
+        <div class="sidebar-box">
+            <h2>Publication Ethics  </h2>
+            <p style="text-align:justify">
+
+                <div class="nav-card">
+                    <!-- Navigation Bar -->
+                    <nav class="nav-bar">
+                        <ul class="nav-list">
+                            <!-- Each li has a data-tab-id that matches the content div's ID -->
+                           @*  <li class="nav-item-separator">
+                                <a href="#" data-tab-id="action1" class="nav-link active">
+                                    Editorial Policy
+                                </a>
+                            </li> *@
+                            <li class="nav-item-separator">
+                                <a href="#" data-tab-id="action2" class="nav-link">
+                                    Peer-review Process
+                                </a>
+                            </li>
+                            <li class="nav-item-separator">
+                                <a href="#" data-tab-id="action3" class="nav-link">
+                                    Open access policy
+                                </a>
+                            </li>
+                            <li class="nav-item-separator">
+                                <a href="#" data-tab-id="action4" class="nav-link">
+                                    Plagiarism
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="action5" class="nav-link">
+                                    Conflicts of Interest
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="action6" class="nav-link">
+                                    Repository Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="action7" class="nav-link">
+                                    Creative Commons Licensing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="action8" class="nav-link">
+                                    Advertising Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="action9" class="nav-link">
+                                    Ahead of Print Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="action10" class="nav-link">
+                                    Copyright of the Published Material
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="action11" class="nav-link">
+                                    Revenue Sources
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" data-tab-id="action12" class="nav-link">
+                                    Digital Archiving
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="sidebar-box">
+            <div class="content-card">
+                <div id="tab-content-container">
+                    @* <div id="action1" class="tab-content active-content">
+
+                        <h3>Editorial Policy</h3>
+                        <p>
+                            Soon.
+                        </p>
+                    </div> *@
+
+                    <div id="action2" class="tab-content">
+                        <h3>Peer-review Process</h3>
+                        <p>
+                            Soon.
+                        </p>
+
+                    </div>
+
+                    <div id="action3" class="tab-content">
+                        <h3>Open access policy</h3>
+                        <p>
+                            Knowmed Publication advocates for open-access publishing platform, providing free and unrestricted online access to research outputs, including journal articles (Full content). With no subscription fees or registration requirements, all published content is immediately accessible upon publication. This ensures that researchers, students, scholars, and readers worldwide can quickly and effortlessly access the latest research published this platform, fostering knowledge dissemination and academic advancement.
+                        </p>
+
+                    </div>
+
+                    <div id="action4" class="tab-content">
+                        <h3>Plagiarism</h3>
+                        <p>
+                            Self-plagiarism occurs when an author reuses their own previously published work without proper citation, presents existing content as new, or fails to credit the original source. Knowmed Publication considers self-plagiarism a form of plagiarism. For instance, if an author incorporates parts of their prior publication into a new manuscript without acknowledgment, it qualifies as self-plagiarism. To maintain originality and academic integrity, we provide Plagiarism X software to our editors and reviewers as part of our manuscript submission system.
+                        </p>
+
+                    </div>
+
+                    <div id="action5" class="tab-content">
+                        <h3>Conflicts of Interest</h3>
+                        <p>
+
+                            A writing’s resilience to criticism and public trust depends partly on how well conflicts of interest are handled during writing, editing, and peer review. Conflicts arise when authors, reviewers, or editors have financial or personal relationships that could bias their work—also called competing interests or dual commitments. These relationships can influence judgment, even if individuals believe they do not. Financial ties, such as employment, consulting, stock ownership, honoraria, and paid expert testimony, are the most visible and potentially damaging. Other conflicts may stem from personal rivalries, academic competition, or strong intellectual views. Disclosure is crucial, especially in editorials and review articles where bias is harder to detect, allowing editors to assess and manage potential conflicts.
+                        </p>
+
+                    </div>
+
+                    <div id="action6" class="tab-content">
+                        <h3>Repository Policy</h3>
+                        <p>
+                            Authors are encouraged to deposit their published articles in any repository. After publication in the journal, authors are allowed—and even encouraged—to share their content online, such as in institutional repositories or on personal websites. Doing so can lead to fruitful discussions, earlier and more frequent citations, and greater visibility of their work. It also promotes the accessibility and reproducibility of research findings, benefiting the broader academic community.
+                        </p>
+
+                    </div>
+                    <div id="action7" class="tab-content">
+                        <h3>Creative Commons Licensing</h3>
+                        <p>
+                            Knowmed Publication is an Open Access (OA) publication, with articles licensed under the Creative Commons Attribution 4.0 International License. This allows others to remix, adapt, and expand upon the work for non-commercial purposes, provided proper credit is given and any derivative works are shared under the same terms. This licensing model enables wider dissemination while allowing authors to retain specific rights over their work.
+                        </p>
+
+                    </div>
+                    <div id="action8" class="tab-content">
+                        <h3>Advertising Policy</h3>
+                        <p>
+                            Knowmed Publication reserves the right to reject any advertisement that does not comply with its advertising policy.<br />
+                           <br />
+                           
+
+                            <ul class="numbered-bullets">
+                                <li>
+                                   Advertisements that are indecent, offensive, or discriminatory on personal, racial, ethnic, sexual orientation, or religious grounds, whether in text or artwork, will not be accepted.<br />
+                                </li>
+                                <li>
+                                  Knowmed Publication will decline advertisements for products or services that are harmful to health, such as tobacco and alcohol.<br />
+                                </li>
+                                <li>
+                                  Product advertorials will not feature treatment-specific or drug-specific campaigns linked to specific articles about the advertised products.<br />
+                                </li>
+                          
+                            </ul><br />
+
+                            Advertisements or product information on the Knowmed Publication’s website do not imply endorsement or approval by the Journal or its publisher regarding the quality or claims of the advertised products. Editorial decisions are made independently and are not influenced by any advertisements on the website.<br />
+
+
+
+                        </p>
+
+                    </div>
+                    <div id="action9" class="tab-content">
+                        <h3>Ahead of Print Policy</h3>
+                        <p>
+                            Articles published online under the “Ahead of Print” model are deemed officially published and can be cited using their DOI as the reference. Knowmed Publication does not permit changes to articles post-publication unless they comply with established procedures for correcting the scientific record.
+                        </p>
+
+                    </div>
+                     <div id="action10" class="tab-content">
+                        <h3>Copyright of the Published Material</h3>
+                        <p>
+                            The journal requires authors to submit a signed consent declaration form, affirming their responsibility for releasing the material on behalf of all co-authors. While authors retain copyright ownership, they transfer all licensing and publishing rights to the publisher. The author grants the publisher exclusive rights for commercial use of the article and a full legal-term license to publish. This transfer includes non-exclusive rights to reproduce and distribute the article in various formats, such as reprints, translations, photographic reproductions, microforms, and electronic formats (both online and offline).
+                        </p>
+
+                    </div>
+                    <div id="action11" class="tab-content">
+                        <h3>Revenue Sources</h3>
+                        <p>
+                            Knowmed Publication is a self-funded, open-access journal available in both online and print formats. Article publication charges (APCs) from authors are the primary source of revenue, covering administrative, printing, and operational costs. A small portion of additional income is generated through advertisements and subscriptions.
+                          <br />  The APC structure is designed to be inclusive, offering discounted rates for authors from low- and middle-income countries. Expenses such as web hosting, pre-press preparations, print production, and staff salaries are supported through these funding sources.
+
+                        </p>
+
+                    </div>
+
+                    <div id="action12" class="tab-content">
+                        <h3>Digital Archiving</h3>
+                        <p>
+                            Digital archiving safeguards digital content against technological changes and data loss, ensuring long-term preservation and accessibility. To protect the integrity and longevity of our journal, we rely on trusted archiving services like Portico and CLOCKSS. (Add archiving details here) These services ensure that our journal remains securely preserved and accessible to researchers, educators, and the public—now and in the future.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Wait for the DOM to be fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get all the navigation links
+      const navLinks = document.querySelectorAll('.nav-link');
+      // Get all the tab content sections
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      // Function to show a specific tab content and activate its link
+      const showTab = (tabId) => {
+        // Deactivate all links and remove active-content from all contents first
+        navLinks.forEach(link => link.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active-content'));
+
+        // Activate the clicked link
+        const activeLink = document.querySelector(`.nav-link[data-tab-id="${tabId}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+
+        // Show the corresponding content by adding 'active-content'
+        const targetContent = document.getElementById(tabId);
+        if (targetContent) {
+          targetContent.classList.add('active-content');
+        }
+      };
+
+      // Add click event listeners to each navigation link
+      navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevent default link behavior
+          const tabId = event.target.dataset.tabId; // Get the ID from data-tab-id attribute
+          if (tabId) {
+            showTab(tabId); // Call the function to switch tabs
+          }
+        });
+      });
+
+      // Initially show the first tab (e.g., 'AIM and Scope')
+      // This uses the data-tab-id of the first link in the HTML
+      if (navLinks.length > 0) {
+        showTab(navLinks[0].dataset.tabId);
+      }
+    });
+</script>
+

@@ -1,0 +1,640 @@
+﻿@{
+    ViewData["Title"] = "Journal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+    .content-container {
+        display: flex;
+        margin-top: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .sidebar {
+        width: 30%;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-right: 1px solid #ddd;
+    }
+
+    .sidebar-title {
+        background-color: #eee;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .sidebar-image {
+        background-color: #3b3b64;
+        height: 200px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .sidebar-button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        background-color: #8b0000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+        .sidebar-button:hover {
+            background-color: #a52a2a;
+        }
+
+    .main-content {
+        width: 70%;
+        padding: 20px;
+    }
+
+    .journal-title {
+        font-size: 14px;
+        font-weight: bold;
+       
+        color: #8b0000;
+        align-items:center;
+        text-align:center;
+    }
+
+    .journal-details {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        
+        margin-bottom: 20px;
+    }
+
+    .detail-label {
+        font-weight: bold;
+    }
+
+    .open-journal {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .open-journal-button {
+        padding: 12px 30px;
+        background-color: #8b0000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .open-journal-button:hover {
+            background-color: #a52a2a;
+        }
+
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    .sidebar-box123
+     {
+        background-color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    .font_css
+    {
+    font-size:14px;
+    }
+</style>
+
+<div class="container font_css">
+
+    <div class="sidebar-box123">
+      
+        <div class="journal-title">  Knowmed Publication Journal List</div>
+    </div>
+
+    <!-- 1. -->
+    <div class="content-container sidebar-box123">
+
+      
+
+        <div class="sidebar">
+            <div class="sidebar-title">Journal Particulars</div>
+            <div class="sidebar-image"></div>
+            <a href="#" class="sidebar-button">Submit Manuscript</a>
+            <a href="#" class="sidebar-button">Register Author</a>
+        </div>
+
+        <div class="main-content">
+            <h1 class="journal-title">Indian Journal of Health Care, Medical & Pharmacy Practice (IJHMP)</h1>
+
+            <div class="journal-details">
+                <div class="detail-label">Frequency</div>
+                <div class="detail-value">2 (Biannually)</div>
+
+                <div class="detail-label">Abbreviation</div>
+                <div class="detail-value">IJHMP</div>
+
+                <div class="detail-label">ISSN</div>
+                <div class="detail-value">2583-2069</div>
+
+                <div class="detail-label">Chief Editor</div>
+                <div class="detail-value">Dr. Kamal Saini</div>
+
+                <div class="detail-label">Starting Year</div>
+                <div class="detail-value">2020</div>
+
+                <div class="detail-label">Subject</div>
+                <div class="detail-value">Multidisciplinary</div>
+
+                <div class="detail-label">Language</div>
+                <div class="detail-value">English</div>
+
+                <div class="detail-label">Current Volume</div>
+                <div class="detail-value">6</div>
+
+                <div class="detail-label">Publication Format</div>
+                <div class="detail-value">Online</div>
+
+                <div class="detail-label">Email Id</div>
+                <div class="detail-value">ijhmp20@gmail.com</div>
+
+                <div class="detail-label">Website</div>
+                <div class="detail-value">ijhmp.com</div>
+
+                <div class="detail-label">Indexed In</div>
+                <div class="detail-value">Index Copernicus International, Crossref, DOI, ResearchGate, Google Scholar, IP Indexing, ABCD Index (Score 6.2), RPRI (4.13), DRJI etc.</div>
+
+                <div class="detail-label">DOI of Journal</div>
+                <div class="detail-value">10.59551/IJHMP</div>
+
+                <div class="detail-label">Journal Home Page</div>
+                <div class="detail-value"><a href="https://ijhmp.com/Home" target="_blank">https://ijhmp.com/Home</a></div>
+
+                <div class="detail-label">Keywords</div>
+                <div class="detail-value">Health Care, Medical Science, Pharmaceutical Sciences.</div>
+            </div>
+
+            @* <div class="open-journal">
+                <button class="open-journal-button">Open Journal</button>
+            </div> *@
+        </div>
+        
+    </div>
+
+    <!-- 2. -->
+    <div class="content-container sidebar-box123">
+
+
+
+        <div class="sidebar">
+            <div class="sidebar-title">Journal Particulars</div>
+            <div align="center">
+                <img title="IJCNP" src="~/images/IJCNP.jpg" style="width:250px; height:auto;" />
+
+
+            </div>
+            <a href="#" class="sidebar-button">Submit Manuscript</a>
+            <a href="#" class="sidebar-button">Register Author</a>
+        </div>
+
+        <div class="main-content">
+            <h1 class="journal-title">International Journal of Clinical Nursing and Practice (IJCNP)</h1>
+
+            <div class="journal-details">
+                <div class="detail-label">Frequency</div>
+                <div class="detail-value">Quarterly</div>
+
+                <div class="detail-label">Abbreviation</div>
+                <div class="detail-value">IJCNP</div>
+
+                <div class="detail-label">ISSN</div>
+                <div class="detail-value">In process</div>
+
+           @*      <div class="detail-label">Chief Editor</div>
+                <div class="detail-value">Dr. Kamal Saini</div> *@
+
+                <div class="detail-label">Starting Year</div>
+                <div class="detail-value">2025</div>
+
+                <div class="detail-label">Subject</div>
+                <div class="detail-value">Nursing</div>
+
+                <div class="detail-label">Language</div>
+                <div class="detail-value">English</div>
+
+                <div class="detail-label">Current Volume</div>
+                <div class="detail-value">1</div>
+
+                <div class="detail-label">Publication Format</div>
+                <div class="detail-value">Online + Print</div>
+
+                <div class="detail-label">Email Id</div>
+                <div class="detail-value">-</div>
+
+                <div class="detail-label">Website</div>
+                <div class="detail-value">ijhmp.com</div>
+
+                <div class="detail-label">Indexed In</div>
+                <div class="detail-value">
+                    Index Copernicus International, Crossref, DOI, ResearchGate,
+                    Google Scholar, IP Indexing, ABCD Index, RPRI, DRJI etc.
+                </div>
+
+                <div class="detail-label">DOI of Journal</div>
+                <div class="detail-value">10.59551/</div>
+
+                <div class="detail-label">Journal Home Page</div>
+                <div class="detail-value"><a href="https://ijhmp.com/Home" target="_blank">https://ijhmp.com/Home</a></div>
+
+                <div class="detail-label">Keywords</div>
+                <div class="detail-value">
+                    Cardiovascular Nursing, Community and Public Health Nursing,
+                    Critical Care Nursing, Critical Care Pediatric Nursing, Emergency
+                    Nursing, Enterostomal Therapy Nursing, Gastroenterology,Nursing,
+                    Geriatric, Gerontological Nursing, healthcare management tasks,
+                    Hospice Palliative Care Nursing, Medical-Surgical Nursing, Mental
+                    health, Nephrology Nursing, Neuroscience Nursing, Occupational
+                    Health Nursing, Oncology Nursing, Orthopaedic Nursing,
+                    Paediatric Nurse, patient care activities, PeriAnesthesia Nursing,
+                    Perinatal Nursing, Perioperative Nursing, Psychiatric and Mental
+                    Health Nursing, Rehabilitation Nursing
+
+                </div>
+            </div>
+
+            @* <div class="open-journal">
+                <button class="open-journal-button">Open Journal</button>
+            </div> *@
+        </div>
+
+    </div>
+
+    <!-- 3. -->
+    <div class="content-container sidebar-box123">
+
+
+
+        <div class="sidebar">
+            <div class="sidebar-title">Journal Particulars</div>
+            <div align="center">
+                <img title="IJCNP" src="~/images/IRJOG.jpg" style="width:250px; height:auto;" />
+
+
+            </div>
+            <a href="#" class="sidebar-button">Submit Manuscript</a>
+            <a href="#" class="sidebar-button">Register Author</a>
+        </div>
+
+        <div class="main-content">
+            <h1 class="journal-title">International Research Journal of Obstetrics and Gynaecology (IRJOG)</h1>
+
+            <div class="journal-details">
+                <div class="detail-label">Frequency</div>
+                <div class="detail-value">Quarterly</div>
+
+                <div class="detail-label">Abbreviation</div>
+                <div class="detail-value">IRJOG</div>
+
+                <div class="detail-label">ISSN</div>
+                <div class="detail-value">In process</div>
+
+              @*   <div class="detail-label">Chief Editor</div>
+                <div class="detail-value">Dr. Kamal Saini</div> *@
+
+                <div class="detail-label">Starting Year</div>
+                <div class="detail-value">2025</div>
+
+                <div class="detail-label">Subject</div>
+                <div class="detail-value">Obstetrics and Gynaecology</div>
+
+                <div class="detail-label">Language</div>
+                <div class="detail-value">English</div>
+
+                <div class="detail-label">Current Volume</div>
+                <div class="detail-value">1</div>
+
+                <div class="detail-label">Publication Format</div>
+                <div class="detail-value">Online + Print</div>
+
+                <div class="detail-label">Email Id</div>
+                <div class="detail-value">-</div>
+
+                <div class="detail-label">Website</div>
+                <div class="detail-value">irjog.Knwmed.com</div>
+
+                <div class="detail-label">Indexed In</div>
+                <div class="detail-value">
+                    Index Copernicus International, Crossref, DOI, ResearchGate,
+                    Google Scholar, IP Indexing, ABCD Index, RPRI, DRJI etc.
+
+                </div>
+
+                <div class="detail-label">DOI of Journal</div>
+                <div class="detail-value">10.59551/</div>
+
+                <div class="detail-label">Journal Home Page</div>
+                <div class="detail-value"><a href="#" target="_blank">#</a></div>
+
+                <div class="detail-label">Keywords</div>
+                <div class="detail-value">
+                    Labor and Delivery, Prenatal Care, Women's Reproductive
+                    Health, Gynecological Cancer Care, and Postpartum Care
+
+
+                </div>
+            </div>
+
+            @* <div class="open-journal">
+                <button class="open-journal-button">Open Journal</button>
+            </div> *@
+        </div>
+
+    </div>
+
+    <!-- 4. -->
+    <div class="content-container sidebar-box123">
+
+
+
+        <div class="sidebar">
+            <div class="sidebar-title">Journal Particulars</div>
+            <div align="center">
+                <img title="IJCNP" src="~/images/IJAP.jpg" style="width:250px; height:auto;" />
+
+
+            </div>
+            <a href="#" class="sidebar-button">Submit Manuscript</a>
+            <a href="#" class="sidebar-button">Register Author</a>
+        </div>
+
+        <div class="main-content">
+            <h1 class="journal-title">International Journal of Advance Physiotherapy (IJAP)</h1>
+
+            <div class="journal-details">
+                <div class="detail-label">Frequency</div>
+                <div class="detail-value">Quarterly</div>
+
+                <div class="detail-label">Abbreviation</div>
+                <div class="detail-value">IJAP</div>
+
+                <div class="detail-label">ISSN</div>
+                <div class="detail-value">In process</div>
+
+              @*   <div class="detail-label">Chief Editor</div>
+                <div class="detail-value">Dr. Kamal Saini</div> *@
+
+                <div class="detail-label">Starting Year</div>
+                <div class="detail-value">2025</div>
+
+                <div class="detail-label">Subject</div>
+                <div class="detail-value">Physiotherapy</div>
+
+                <div class="detail-label">Language</div>
+                <div class="detail-value">English</div>
+
+                <div class="detail-label">Current Volume</div>
+                <div class="detail-value">1</div>
+
+                <div class="detail-label">Publication Format</div>
+                <div class="detail-value">Online + Print</div>
+
+                <div class="detail-label">Email Id</div>
+                <div class="detail-value">-</div>
+
+                <div class="detail-label">Website</div>
+                <div class="detail-value">irjog.Knwmed.com</div>
+
+                <div class="detail-label">Indexed In</div>
+                <div class="detail-value">
+                    Index Copernicus International, Crossref, DOI, ResearchGate,
+                    Google Scholar, IP Indexing, ABCD Index, RPRI, DRJI etc.
+
+
+                </div>
+
+                <div class="detail-label">DOI of Journal</div>
+                <div class="detail-value">10.59551/</div>
+
+                <div class="detail-label">Journal Home Page</div>
+                <div class="detail-value"><a href="#" target="_blank">#</a></div>
+
+                <div class="detail-label">Keywords</div>
+                <div class="detail-value">
+                    Applied Psychology, Aquatic Therapy, Back Pain Therapy, Biomechanics, and Evidence-based Clinical Practice, Cardiopulmonary Physiotherapy, Cardiopulmonary Resuscitation, Chronic Pain Management, Clinic, Clinical Psychology, Cognitive Processes, Cognitive-Behavioral Therapy,  Counseling Outcomes, Counseling Processes, Counseling, Diagnosis of Mental Health Disorders
+                    Emotional Processes, Etiology of Mental Health Disorders, Human Behavior, Humanistic Therapy
+                    Injury Prevention, Integrative Approaches, manual and electrotherapy, Manual Therapy
+                    Mental Health Disorders, Musculoskeletal and Orthopedic Physiotherapy, Neurological Physical Therapy, Neurological Rehabilitation, Orthopedic Rehabilitation, Pediatric and Geriatric Care, Pediatric Physiotherapy, Physical Medicine and Rehabilitation, Physical Therapist, Physiotherapy Education, Positive Psychology, Mindfulness-Based Interventions, Psychiatric Rehabilitation, Psychodynamic Therapy, Psychoeducation, Psychoeducational Interventions, Psychological Interventions, Psychological Research, Psychotherapeutic Modalities, Psychotherapy Effectiveness, Sports and Exercise Therapy, Therapeutic Strategies, Trauma and Stressor-Related Disorders, Treatment of Mental Health Disorders, Vestibular Rehabilitation, Women's health
+
+
+
+                </div>
+            </div>
+
+           @*  <div class="open-journal">
+                <button class="open-journal-button">Open Journal</button>
+            </div> *@
+        </div>
+
+    </div>
+
+    <!-- 5. -->
+    <div class="content-container sidebar-box123">
+
+
+
+        <div class="sidebar">
+            <div class="sidebar-title">Journal Particulars</div>
+            <div align="center">
+                <img title="IJCNP" src="~/images/IJPR.jpg" style="width:250px; height:auto;" />
+
+
+            </div>
+            <a href="#" class="sidebar-button">Submit Manuscript</a>
+            <a href="#" class="sidebar-button">Register Author</a>
+        </div>
+
+        <div class="main-content">
+            <h1 class="journal-title">International Journal of Pharmacy and Research (IJPR)</h1>
+
+            <div class="journal-details">
+                <div class="detail-label">Frequency</div>
+                <div class="detail-value">Quarterly</div>
+
+                <div class="detail-label">Abbreviation</div>
+                <div class="detail-value">IJPR</div>
+
+                <div class="detail-label">ISSN</div>
+                <div class="detail-value">In process</div>
+
+            @*     <div class="detail-label">Chief Editor</div>
+                <div class="detail-value">Dr. Kamal Saini</div> *@
+
+                <div class="detail-label">Starting Year</div>
+                <div class="detail-value">2025</div>
+
+                <div class="detail-label">Subject</div>
+                <div class="detail-value">Pharmacy</div>
+
+                <div class="detail-label">Language</div>
+                <div class="detail-value">English</div>
+
+                <div class="detail-label">Current Volume</div>
+                <div class="detail-value">1</div>
+
+                <div class="detail-label">Publication Format</div>
+                <div class="detail-value">Online + Print</div>
+
+                <div class="detail-label">Email Id</div>
+                <div class="detail-value">-</div>
+
+                <div class="detail-label">Website</div>
+                <div class="detail-value">irjog.Knwmed.com</div>
+
+                <div class="detail-label">Indexed In</div>
+                <div class="detail-value">
+                    Index Copernicus International, Crossref, DOI, ResearchGate,
+                    Google Scholar, IP Indexing, ABCD Index, RPRI, DRJI etc.
+
+
+                </div>
+
+                <div class="detail-label">DOI of Journal</div>
+                <div class="detail-value">10.59551/</div>
+
+                <div class="detail-label">Journal Home Page</div>
+                <div class="detail-value"><a href="#" target="_blank">#</a></div>
+
+                <div class="detail-label">Keywords</div>
+                <div class="detail-value">
+                    General Pharmacy: Clinical pharmacy, Community pharmacy, Hospital pharmacy, Pharmaceutical care, Medication therapy management, Prescription drugs, Drug dispensing, Rational drug use.
+                    Pharmaceutical Sciences: Pharmaceutics, Pharmacology, Pharmacokinetics, Pharmacodynamics, Medicinal chemistry, Pharmacognosy, Biopharmaceutics, Drug design and development, Pharmaceutical formulation, Drug delivery systems, Novel drug delivery systems (NDDS), Nanotechnology in pharmacy.
+                    Regulatory and Quality: Good Manufacturing Practice (GMP), Drug regulatory affairs, Quality control, Quality assurance, Stability studies, Pharmacovigilance, Drug safety.
+                    Clinical and Therapeutic Areas: Clinical trials, Evidence-based medicine, Therapeutic drug monitoring, Adverse drug reactions, Drug interactions, Pharmacogenomics, Personalized medicine, Antibiotic stewardship.
+                    Emerging and Specialized Fields: Biotechnology, Biosimilars, Radiopharmacy, Oncology pharmacy, Geriatric pharmacy, Pediatric pharmacy, Herbal medicine, Nutraceuticals.
+
+
+
+                </div>
+            </div>
+
+           @*  <div class="open-journal">
+                <button class="open-journal-button">Open Journal</button>
+            </div> *@
+        </div>
+
+    </div>
+
+    <!-- 6. -->
+    <div class="content-container sidebar-box123">
+
+
+
+        <div class="sidebar">
+            <div class="sidebar-title">Journal Particulars</div>
+            <div align="center">
+                <img title="IJCNP" src="~/images/IJCCM.jpg" style="width:250px; height:auto;" />
+
+
+            </div>
+            <a href="#" class="sidebar-button">Submit Manuscript</a>
+            <a href="#" class="sidebar-button">Register Author</a>
+        </div>
+
+        <div class="main-content">
+            <h1 class="journal-title">International journal of Critical Care and Medicine (IJCCM)</h1>
+
+            <div class="journal-details">
+                <div class="detail-label">Frequency</div>
+                <div class="detail-value">Quarterly</div>
+
+                <div class="detail-label">Abbreviation</div>
+                <div class="detail-value">IJPR</div>
+
+                <div class="detail-label">ISSN</div>
+                <div class="detail-value">In process</div>
+@* 
+                <div class="detail-label">Chief Editor</div>
+                <div class="detail-value">Dr. Kamal Saini</div> *@
+
+                <div class="detail-label">Starting Year</div>
+                <div class="detail-value">2025</div>
+
+                <div class="detail-label">Subject</div>
+                <div class="detail-value">Medicine</div>
+
+                <div class="detail-label">Language</div>
+                <div class="detail-value">English</div>
+
+                <div class="detail-label">Current Volume</div>
+                <div class="detail-value">1</div>
+
+                <div class="detail-label">Publication Format</div>
+                <div class="detail-value">Online + Print</div>
+
+                <div class="detail-label">Email Id</div>
+                <div class="detail-value">-</div>
+
+                <div class="detail-label">Website</div>
+                <div class="detail-value">irjog.Knwmed.com</div>
+
+                <div class="detail-label">Indexed In</div>
+                <div class="detail-value">
+                    Index Copernicus International, Crossref, DOI, ResearchGate,
+                    Google Scholar, IP Indexing, ABCD Index, RPRI, DRJI etc.
+
+
+                </div>
+
+                <div class="detail-label">DOI of Journal</div>
+                <div class="detail-value">10.59551/</div>
+
+                <div class="detail-label">Journal Home Page</div>
+                <div class="detail-value"><a href="#" target="_blank">#</a></div>
+
+                <div class="detail-label">Keywords</div>
+                <div class="detail-value">
+                    Intensive care unit (ICU) management,
+                    Sepsis and septic shock,
+                    Mechanical ventilation and respiratory support,
+                    Hemodynamic monitoring and cardiovascular support,
+                    Neurocritical care,
+                    Acute kidney injury and renal replacement therapy,
+                    Infectious diseases in critical care,
+                    Trauma and emergency care,
+                    Sedation, analgesia, and delirium management,
+                    Multiorgan failure,
+                    Critical care pharmacology,
+                    Nutrition in the ICU,
+                    Palliative care in critical illness,
+                    Ethical issues and end-of-life care,
+                    Innovations in critical care technology and monitoring
+
+
+
+
+                </div>
+            </div>
+
+           @*  <div class="open-journal">
+                <button class="open-journal-button">Open Journal</button>
+            </div> *@
+        </div>
+
+    </div>
+
+</div>

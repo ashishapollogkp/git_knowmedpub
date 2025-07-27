@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - knowmedpub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <header class="top-header">
+        <div class="container">
+            <div class="contact-info">
+                <i class="fas fa-phone"></i> +91 902-450-6327 | <i class="fas fa-envelope"></i> info@knowmedpub.com
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="~/images/logopublication-01.png" alt="Knowmed Publication Logo" class="logo-img">
+                <span class="logo-text">Knowmed <span>Publication</span></span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search journals, articles...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <button class="menu-toggle" id="menuToggle">
+                
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
+                <li><a asp-controller="home" asp-action="index" >Home</a></li>
+                <li><a asp-controller="home" asp-action="Journal">Journals</a></li>
+                <li><a asp-controller="home" asp-action="PublicationEthics">Publication Ethics </a></li>
+                
+                <li><a asp-controller="home" asp-action="AuthorGuidelines">Author Guideline</a></li>
+                <li><a asp-controller="home" asp-action="Subscription">Subscription</a></li>
+                <li><a asp-controller="home" asp-action="ContactUs">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main"></main>
+            @RenderBody()
+        
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Knowmed Publication. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-lock"></i> Privacy Policy</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Terms of Service</a>
+                <a href="#"><i class="fas fa-exclamation-circle"></i> Disclaimer</a>
+                <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainMenu').classList.toggle('active');
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mainMenu');
+            const menuToggle = document.getElementById('menuToggle');
+
+            if (window.innerWidth <= 768 &&
+                !menu.contains(event.target) &&
+                !menuToggle.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Dropdown functionality for mobile
+        document.querySelectorAll('.dropdown-parent > a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown-parent').forEach(item => {
+                        if (item !== parent) {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

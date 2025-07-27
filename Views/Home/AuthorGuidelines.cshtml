@@ -1,0 +1,488 @@
+﻿@{
+    ViewData["Title"] = "AuthorGuidelines";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Base styles for the body */
+
+
+    /* Main container for the single section */
+    .main-container {
+        display: flex;
+        flex-direction: column; /* flex-col */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+        border: 1px solid #e5e7eb; /* border border-gray-200 */
+        background-color: white; /* bg-white */
+        padding: 2rem; /* p-8 */
+        width: 100%; /* w-full */
+        max-width: 64rem; /* max-w-5xl (1024px) */
+        height: 100%; /* h-full */
+    }
+
+
+
+    /* About the Journal section */
+    .journal-section {
+        width: 100%; /* w-full */
+        height: 100%; /* h-full */
+        display: flex;
+        flex-direction: column; /* flex-col */
+    }
+
+    /* Title styling */
+    .journal-title {
+        font-size: 1.875rem; /* text-3xl */
+        font-weight: 800; /* font-extrabold */
+        color: #111827; /* text-gray-900 */
+        margin-bottom: 1.25rem; /* mb-5 */
+        padding-bottom: 0.75rem; /* pb-3 */
+        border-bottom: 2px solid #bfdbfe; /* border-b-2 border-blue-200 */
+    }
+
+    /* Card for Navigation Tabs */
+    .nav-card {
+        background-color: white; /* bg-white */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        padding: 1.5rem; /* p-6 */
+        margin-bottom: 2rem; /* mb-8 */
+        border: 1px solid #f3f4f6; /* border border-gray-100 */
+    }
+
+    /* Navigation Bar */
+    .nav-bar {
+        display: flex; /* flex */
+        justify-content: center; /* justify-center */
+    }
+
+
+
+    /* Navigation list */
+    .nav-list {
+        list-style: none; /* remove default list styling */
+        padding: 0;
+        margin: 0;
+        display: flex; /* flex */
+        flex-wrap: wrap; /* flex-wrap */
+        align-items: center; /* items-center */
+        font-size: 1rem; /* text-base */
+    }
+
+
+
+
+    /* Custom CSS for the separator */
+    .nav-item-separator:not(:last-child)::after {
+        content: '|';
+        margin-left: 0.75rem; /* Increased space for separator */
+        margin-right: 0; /* Adjusted to combine with li margin-right */
+        color: #94a3b8; /* Tailwind slate-400 for a softer separator */
+        font-weight: 300; /* Lighter weight for the separator */
+    }
+
+    .nav-link {
+        font-family: 'Inter', sans-serif;
+        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Smooth transition for color, background, and border */
+        padding: 0.5rem 0.75rem; /* More generous padding */
+        border-radius: 0.375rem; /* Tailwind rounded-md */
+        display: inline-block; /* Ensures padding and background work correctly */
+        color: #2563eb; /* text-blue-600 */
+        font-weight: 500; /* font-medium */
+        white-space: nowrap; /* whitespace-nowrap */
+        text-decoration: none;
+    }
+
+        /* Styles for the active tab */
+        .nav-link.active {
+            color: #1e40af; /* A darker blue for active state (Tailwind blue-800) */
+            font-weight: 600; /* Semi-bold for active state */
+            background-color: #eff6ff; /* Light blue background for active tab (Tailwind blue-50) */
+            border-bottom: 3px solid #1e40af; /* Thicker, bolder underline for active state */
+            padding-bottom: calc(0.5rem - 3px); /* Adjust padding to keep text aligned with new border */
+            border-radius: 0.375rem 0.375rem 0 0; /* Rounded top corners, sharp bottom for the border */
+        }
+
+        .nav-link:hover:not(.active) {
+            background-color: #f3f4f6; /* Light gray background on hover for non-active tabs (Tailwind gray-100) */
+            color: #2563eb; /* Tailwind blue-600 on hover */
+        }
+
+        .nav-link:hover {
+            color: #1d4ed8; /* hover:text-blue-800 */
+        }
+
+
+    /* Card for Tab Content Sections */
+    .content-card {
+        background-color: white; /* bg-white */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        padding: 1.5rem; /* p-6 */
+        border: 1px solid #f3f4f6; /* border border-gray-100 */
+        flex-grow: 1; /* flex-grow */
+    }
+
+    /* CSS for smooth content transitions */
+    .tab-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden; /* Hides content that exceeds max-height during transition */
+        transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        padding-top: 0; /* Initially no padding to make collapse smooth */
+        padding-bottom: 0;
+        line-height: 1.6; /* Improve readability */
+        color: #1f2937; /* text-gray-800 */
+        font-size: 1rem; /* text-base */
+    }
+
+        /* Class to show the active tab content */
+        .tab-content.active-content {
+            opacity: 1;
+            max-height: 100%; /* A sufficiently large value to accommodate content */
+            padding-top: 1.5rem; /* Tailwind py-6, now applied on active */
+            padding-bottom: 1.5rem; /* Tailwind py-6, now applied on active */
+        }
+
+        /* Content specific styling */
+        .tab-content p {
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        .tab-content h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            color: #111827; /* text-gray-900 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+
+    .numbered-bullets {
+        list-style-type: none;
+        padding-left: 1.5rem;
+        counter-reset: item;
+    }
+
+        .numbered-bullets li::before {
+            counter-increment: item;
+            content: counter(item) ". ";
+            font-weight: bold;
+            color: #333; /* optional: blue bullet and number */
+            margin-right: 8px;
+        }
+
+    .custom-o-list {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+        .custom-o-list li::before {
+            content: "o ";
+            font-weight: bold;
+            color: #333; /* You can change color as needed */
+            margin-right: 6px;
+        }
+
+</style>
+<main class="container">
+
+
+    <section class="content">
+
+
+
+        <div class="sidebar-box">
+            <h2>Author Guideline</h2>
+            <p style="text-align:justify">
+
+                <div class="nav-card">
+                    <!-- Navigation Bar -->
+                    <nav class="nav-bar">
+                        <ul class="nav-list">
+                            <!-- Each li has a data-tab-id that matches the content div's ID -->
+                            <li class="nav-item-separator">
+                                <a href="#" data-tab-id="action1" class="nav-link active">
+                                    Author Instruction
+                                </a>
+                            </li>
+                            <li class="nav-item-separator">
+                                <a href="#" data-tab-id="action2" class="nav-link">
+                                    Plagiarism
+                                </a>
+                            </li>
+                            <li class="nav-item-separator">
+                                <a href="#" data-tab-id="action3" class="nav-link">
+                                    Withdrawal policy
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="sidebar-box">
+            <div class="content-card">
+                <div id="tab-content-container">
+                    <div id="action1" class="tab-content active-content">
+
+                        <h3>Author Instruction</h3>
+                        <h4> Manuscript Submission Process</h4><br />
+                        All manuscripts must be submitted online via [submission portal link]. The corresponding author, who is typically the submitting author, is responsible for managing the manuscript throughout the submission and peer-review process. For first-time users, registration is required before submission. Upon successful registration, a confirmation email will be sent. Authors can then log in using their registered email ID and password to submit manuscripts. For any assistance, please contact us at [Email ID].<br />
+                        After successful registration, log in as an author and submit your manuscript for further processing. While submitting, authors are required to provide information regarding payment and any applicable funder agreements. Ensure that all funder requirements are met during the submission process.<br />
+                        <br />
+
+                        <ul class="custom-o-list">
+                            <li>Manuscript should be submitted in Microsoft-Word (Ms-Word) only, No PDF or other format is allowed.</li>
+                            </ul>
+                        <br />
+
+
+                        Manuscripts undergo review and are accepted for publication only if they have not been previously published or are not under consideration elsewhere. Approval for submission must be granted by all authors and the relevant institutions where the research was conducted.
+                        <br />
+                        <h4> Manuscript Preparation</h4><br />
+                        Manuscripts must include the following sections: Title, Author List, Affiliations, Abstract, and Keywords.<br />
+                        Original Research Manuscript Structure<br />
+                        Manuscripts should be organized into the following sections:<br />
+                        <ul class="custom-o-list">
+                            <li>
+                                Introduction
+                            </li>
+                            <li>
+                                Materials and Methods
+                            </li>
+                            <li>
+                                Results
+                            </li>
+                            <li>
+                                Discussion
+                            </li>
+                            <li>
+                                Figures and Tables
+                            </li>
+                            <li>	Conclusions</li>
+                        </ul><br />
+
+                        <h4>  Author Ethical Responsibilities</h4><br />
+                        Authors must provide the following details:<br>
+                        <ul class="custom-o-list">
+                            <li>	Supplementary Materials</li>
+                            <li>    Acknowledgments</li>
+                            <li>	Author Contributions</li>
+                            <li>	Conflicts of Interest</li>
+                            <li>	Funding Information</li>
+                            <li>	Data Availability Statement</li>
+                            <li>	Citations</li>
+                        </ul>
+
+                        <h4> Presentation and Format</h4>
+                        Manuscripts should adhere to formatting guidelines, including:<br />
+                        <ul class="custom-o-list">
+                            <li>	Spacing</li>
+                            <li>	Margins</li>
+                            <li>	Page Numbering</li>
+                            <li>	Word Limit</li>
+                     </ul>
+
+                        <h4> Cover Letter Guidelines</h4><br />
+                        A cover letter must accompany each manuscript submission. It should be concise and highlight the significance of the research within the context of existing work. Additionally, it should clearly explain why the manuscript aligns with the scope of the journal.
+                        <br /> The cover letter should include the following details:
+                        <br />
+
+                        <ul class="custom-o-list">
+                            <li>	Manuscript Title</li>
+                            <li>	Type of Manuscript (e.g., Original Research, Review Article, Case Report, etc.)</li>
+                            <li>	Full Names of All Authors (First Name, Middle Name, and Last Name)</li>
+                            <li>	Complete Affiliations (listed in sequence)</li>
+                            <li>	Corresponding Author’s Contact Number and Email ID</li>
+                            <li>	ORCID iD/Researcher Profile (if available)</li>
+
+                        </ul>
+
+                        <h4> STRUCTURE</h4>
+
+                        The manuscript should be submitted in Microsoft Word format as a single file No PDF or other format is allowed, structured as follows:<br />
+                        <ul class="numbered-bullets">
+                            <li>  	Title Page:
+                            </li>
+                        </ul>
+                        The title page should include the following details:<br />
+
+                        <ul class="custom-o-list">
+                            <li> <b>	Manuscript Title:</b> The title should be concise, specific, relevant, and informative. It should contain major keywords while avoiding formulae and abbreviations.   </li>
+                            <li> <b>		Author Information: </b>The first and last names of all authors must be provided. Middle name initials may be included.   </li>
+                            <li> <b>		Affiliations:</b> Providing complete address details, including city, pin/zip code, state, and country. Affiliations should be numbered (1, 2, 3) rather than marked with symbols.   </li>
+                            <li> <b>		Corresponding Author:</b> Clearly identify the corresponding author who will handle all communication related to the manuscript before and after publication. Provide their full name, address, phone number, and email address. Contact details must be up-to-date, and an institutional email and contact number should be included.   </li>
+                        </ul>
+
+                    <br />  2.<b>	Main Article:</b> The main body of the manuscript should follow immediately after the Title Page. It should include the following sections without mentioning authors' or institution names:
+
+                    <br />
+
+                        <ul class="numbered-bullets">
+
+                            <li>
+                                Manuscript Title </li>
+                            <li>
+                                Abstract
+                            </li>
+                            <li>
+                                Keywords
+                            </li>
+                            <li>
+                                Introduction
+                            </li>
+                            <li>
+                                Materials and Methods
+                            </li>
+                            <li>
+                                Results and Discussion
+                            </li>
+                            <li>
+                                Conclusion
+                            </li>
+                            <li>
+                                Acknowledgements
+                            </li>
+                            <li>
+                                Conflict of Interest
+                            </li>
+                            <li>	References </li>
+                        </ul>
+
+                        3.<b>	Tables, Images, and Graphs:</b> These should be integrated into the main article as applicable, with appropriate adjustments for clarity and readability. All figure, images and graphs should have captions and sharp clear Figures/graphics.<br />
+                        4.	<b>References:</b> References should be formatted according to the IJCNP required format consistently throughout the manuscript.<br />
+                        All scientific names should be written in italics.<br />
+
+                        <b>
+                            Please note: </b> If your manuscript is deemed difficult to read or interpret, the editorial office may request revisions before proceeding with review.<br />
+                        <b> Formatting:</b> The text should be 1.5-spaced, written in a 12-point font (Times New Roman).<br />
+                        <b> Illustrations and Tables: </b>These should be integrated within the text at appropriate points rather than placed at the end. Figure legends can be embedded in the text. Each figure should be saved and uploaded as a separate JPG or JPEG file, or embedded within the main Word file. Figures must be properly labeled, and important findings can be highlighted using arrows or other methods.<br />
+                        <b> Co-author Details:</b> Include affiliations for each co-author. The total number of authors and co-authors should not exceed five.<br />
+                        <b> Suggested Reviewer: </b>Provide the name and details of a qualified reviewer who is suitable for reviewing the manuscript based on the subject and category.<br />
+                        <b> Stylistic and Bibliographic Requirements:</b> Ensure that the manuscript adheres to the stylistic and bibliographic guidelines outlined in the Author's Guidelines provided by. References should IJCNP include DOI for available sources.<br />
+                        Article Formatting<br />
+                        <b>  Word Limit: </b>4000 words excluding references<br />
+                        <b> Abstract:</b> Provide a paragraph summarizing the whole article within 250 words. It should summaries Aim, Methods, Results and Conclusion. No abbreviation should be used in abstract.<br />
+                        <b> Keywords:</b> Five keywords should be provided.<br />
+                        <b> Introduction:</b> Introduction should reflect the background, purpose and significance of the study. References should be cited in Introduction.<br />
+                        <b> Methods:</b> It should be fully transparent with sufficient detail to enable replication by others.<br />
+                        <b> Results: </b>Results should include tables and figures.<br />
+                        Authors are required to clearly present the primary study findings in their manuscript. The text, tables, and figures should logically organize and display results, prioritizing the primary or most significant findings at the forefront. Tables should not merely replicate data already presented in the text but should complement and enhance understanding. Graphs and figures should be used effectively to highlight key findings and trends, supporting the narrative flow of the manuscript. This approach ensures that the manuscript effectively communicates the study's outcomes to the readership.<br />
+                        <b> Results and Discussion:</b> In this section, the results should be evaluated for their validity and compared to relevant findings from other studies, using appropriate in-text citations. The significance and applicability of the results should be justified concisely, highlighting their importance. It's important to acknowledge any limitations of the methods used and suggest areas for further research. This discussion should be succinct yet comprehensive, providing a clear context for the findings and their implications.<br />
+                        <b>  Conclusion:</b> This section should clearly outline the key findings of the research and provide a thorough explanation of their significance and applicability. It is an opportunity to discuss any recommendations arising from the study that have broader implications. Emphasis should be placed on how these findings contribute to existing knowledge, address gaps in understanding, and potentially influence policy or practice in the field. This discussion should be focused and directly connected to the results presented earlier in the manuscript, offering insights into the broader impact and implications of the study's outcomes. Cite references in this section.<br />
+                        <b> Conflict of Interest:</b> In this section, authors are required to disclose any financial, institutional, personal, or other relationships that could potentially influence the findings or decision-making presented in the manuscript. It is crucial to declare any such associations transparently. If there are no conflicts of interest to declare, this should also be clearly stated to maintain transparency and uphold ethical standards in research publication. This disclosure helps readers and reviewers assess the objectivity and reliability of the study's findings and conclusions.<br />
+                      
+                        <h4>REFERENCES</h4>
+
+                        Authors must follow the NLM style guide for references. Citations within the text should appear as superscript numbers. A numbered list of references should be provided at the end of the manuscript, and all authors' names must be included in each reference. <br />
+                        A few examples of references are provided below: <br />
+                        <b>In-text citations:</b> <br />
+                        Numerical sequence: Citations within the text should appear as sequential numbers, typically in parentheses or as superscripts. <br />
+                        Example: "In a study published in 2010, it was found that (1). <br />
+                        Multiple citations: Use commas to separate numbers when referencing multiple sources in a single in-text citation, e.g., (1, 3, 5). <br />
+
+                        <b>IJournal:</b> <br />
+                        Author(s) of article, Title of article, Journal title (full name), Year of publication; Volume number (issue number): Page numbers. <br />
+                        Example: Rose ME, Huerbin MB, Melick J, Marion DW, Palmer AM, Schiding JK, et al. Regulation of interstitial excitatory amino acid concentrations after cortical contusion injury. Brain Res. 2002;935(1-2):40-6.  [PubMed] [Google Scholar] <br />
+
+                        <b> Books:</b> <br />
+                        Author(s) of Book (Surname initials). Title of Book. Edition. Publisher; Place of publication; Year of publication. <br />
+                        Chapters in Book: Author(s) of Chapter (Surname initials). Title of Chapter. In: Editor(s) name, Editors. Title of Book. Place of publication: Publisher; Year of publication, Page numbers. <br />
+
+                    </div>
+
+                    <div id="action2" class="tab-content">
+                        <h3>Plagiarism</h3>
+                        <p>
+                            Self-plagiarism occurs when an author reuses their own previously published work without proper citation, presents existing content as new, or fails to credit the original source. Knowmed Publication considers self-plagiarism a form of plagiarism. For instance, if an author incorporates parts of their prior publication into a new manuscript without acknowledgment, it qualifies as self-plagiarism. To maintain originality and academic integrity, we provide Plagiarism X software to our editors and reviewers as part of our manuscript submission system.
+                        </p>
+
+                    </div>
+
+                    <div id="action3" class="tab-content">
+                        <h3>Withdrawal policy</h3>
+                        <p>
+                            Knowmed Publication is committed to maintaining high standards for all papers through processes such as plagiarism checks, peer review, copyediting, and formatting. Our team invests significant effort to uphold these standards. Therefore, withdrawal of an article during processing is highly discouraging. We strive to make the publishing process as smooth as possible for authors and, in return, expect full adherence to ethical guidelines. The following policy outlines our approach to article withdrawal:
+                            <br /><br />  Requests for article withdrawal will be considered only if received within a week time of the article’s submission date or before the receipt of the copyright form, whichever occurs first. Withdrawal may be permitted if the reason provided is deemed valid. However, if Article Processing Charges (APC) have already been paid, they will not be refunded. Details of articles that are withdrawn or retracted for valid reasons will be published on our website.
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Wait for the DOM to be fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get all the navigation links
+      const navLinks = document.querySelectorAll('.nav-link');
+      // Get all the tab content sections
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      // Function to show a specific tab content and activate its link
+      const showTab = (tabId) => {
+        // Deactivate all links and remove active-content from all contents first
+        navLinks.forEach(link => link.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active-content'));
+
+        // Activate the clicked link
+        const activeLink = document.querySelector(`.nav-link[data-tab-id="${tabId}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+
+        // Show the corresponding content by adding 'active-content'
+        const targetContent = document.getElementById(tabId);
+        if (targetContent) {
+          targetContent.classList.add('active-content');
+        }
+      };
+
+      // Add click event listeners to each navigation link
+      navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevent default link behavior
+          const tabId = event.target.dataset.tabId; // Get the ID from data-tab-id attribute
+          if (tabId) {
+            showTab(tabId); // Call the function to switch tabs
+          }
+        });
+      });
+
+      // Initially show the first tab (e.g., 'AIM and Scope')
+      // This uses the data-tab-id of the first link in the HTML
+      if (navLinks.length > 0) {
+        showTab(navLinks[0].dataset.tabId);
+      }
+    });
+</script>
+
+
